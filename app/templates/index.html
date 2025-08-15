@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oráculo Anime</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container-principal">
+
+        <div class="coluna" id="coluna-esquerda">
+            <div id="area-carta">
+                <div class="container-interno-carta">
+                    <img id="fundo-carta-img" src="{{ url_for('static', filename='img/fundo_carta.png') }}" alt="Fundo da carta">
+
+                    <video id="video-revelacao" muted playsinline>
+                        <source src="{{ url_for('static', filename='img/revelacao_carta.mp4') }}" type="video/mp4">
+                    </video>
+
+                    <div id="sobreposicao-resultado">
+                        <img id="imagem-carta-sorteada" src="">
+                        
+                        <img id="moldura-carta" src="{{ url_for('static', filename='img/moldura.png') }}">
+                        
+                        <div id="nome-carta-sorteada"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="coluna" id="coluna-direita">
+
+            <div id="area-pergunta">
+                <label for="campo-pergunta">Faça sua pergunta ao oráculo:</label>
+                <textarea id="campo-pergunta" rows="3" placeholder="Digite sua pergunta..."></textarea>
+                <button id="botao-revelar">Consultar o Oráculo</button>
+            </div>
+
+            <div id="area-resultado">
+
+                <h2 id="titulo-carta-direita"></h2>
+                
+                <p id="texto-significado-carta"></p>
+
+                <div id="area-resposta-oraculo">
+                    <h3>A Resposta do Oráculo</h3>
+                    <p id="texto-resposta-oraculo"></p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

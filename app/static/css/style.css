@@ -1,0 +1,209 @@
+/* ==========================================================================
+   CONFIGURAÇÕES GLOBAIS E VARIÁVEIS
+   ========================================================================== */
+:root {
+    --cor-fundo: #894392;
+    --cor-texto: #f0e6ff;
+    --cor-borda: #7c5295;
+    --cor-input-fundo: #281c3f;
+    --gradiente-botao: linear-gradient(45deg, #7c5295, #d6a2e8);
+}
+
+body {
+    font-family: 'Cinzel', serif;
+    color: var(--cor-texto);
+    margin: 0;
+    padding: 1.25rem;
+    box-sizing: border-box;
+    min-height: 100vh;
+
+    /* ===== NOVO FUNDO COM IMAGEM ===== */
+
+    /* 1. Define a imagem de fundo (fundo.jpg) */
+    background-image: url('../img/fundo.jpg');
+
+    /* 2. Garante que a imagem cubra toda a tela sem distorcer */
+    background-size: cover;
+
+    /* 3. Centraliza a imagem na tela */
+    background-position: center center;
+
+    /* 4. Impede que a imagem se repita caso seja menor que a tela */
+    background-repeat: no-repeat;
+
+    /* 5. (Efeito Opcional) Deixa a imagem fixa enquanto a página rola */
+    background-attachment: fixed;
+}
+
+/* ==========================================================================
+   ESTRUTURA PRINCIPAL E LAYOUT
+   ========================================================================== */
+.container-principal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    width: 100%;
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+.coluna {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ==========================================================================
+   COMPONENTE: ÁREA DA CARTA (COLUNA ESQUERDA)
+   ========================================================================== */
+#area-carta {
+    position: relative;
+    width: 100%;
+    max-width: 23.3rem; /* ajuste de tamanho */
+    aspect-ratio: 469 / 750;
+    perspective: 62.5rem;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* EFEITO DE "EMENDA SUAVE" (AURA DESFOCADA ATRÁS DA CARTA) */
+#area-carta::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -20px; 
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: var(--cor-fundo); 
+    filter: blur(15px);
+    border-radius: inherit;
+}
+
+/* REGRA ÚNICA PARA O EMPILHAMENTO DE TODAS AS CAMADAS PRINCIPAIS */
+#fundo-carta-img,
+#video-revelacao,
+#sobreposicao-resultado {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit; /* Herda o arredondamento da #area-carta */
+}
+
+/* REGRA PARA AS CAMADAS DENTRO DO RESULTADO */
+#imagem-carta-sorteada,
+#moldura-carta {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ESTILOS INDIVIDUAIS DAS CAMADAS E SLOTS */
+#fundo-carta-img {
+    transition: opacity 0.7s ease-in-out;
+    transform: scaleX(1.15);
+}
+
+#video-revelacao {
+    opacity: 0; /* Começa invisível */
+    transition: opacity 0.7s ease-in-out;
+    transform: scaleX(1.15);
+}
+
+#moldura-carta {
+    transform: scaleX(1.15);
+}
+
+#sobreposicao-resultado {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.7s ease-in-out;
+}
+
+#imagem-carta-sorteada {
+    object-fit: cover;
+    border-radius: 10px;
+    transform: scale(0.40) translateX(13%) translateY(-17%) translateZ(0) rotateX(-8deg) rotateY(3deg) rotateZ(20deg);
+}
+
+#nome-carta-sorteada {
+    position: absolute;
+    bottom: 7.725rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 0.3rem 1rem;
+    border-radius: 1.25rem;
+    font-size: 1.3em;
+    width: 80%;
+}
+
+/* ==========================================================================
+   COMPONENTE: ÁREA DE INTERAÇÃO (COLUNA DIREITA)
+   ========================================================================== */
+#area-pergunta, #area-resultado {
+    width: 100%;
+    max-width: 25rem;
+}
+
+#area-pergunta label { display: block; margin-bottom: 0.625rem; font-size: 1.1em; }
+#area-pergunta textarea { width: 95%; padding: 0.625rem; border-radius: 0.625rem; border: 1px solid var(--cor-borda); background-color: var(--cor-input-fundo); color: var(--cor-texto); font-family: sans-serif; resize: vertical; }
+
+#area-resultado {
+    margin-top: 1.875rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.7s ease-in-out;
+}
+#texto-significado-carta { font-style: italic; margin-bottom: 1.25rem; }
+
+#area-resposta-oraculo {
+    margin-top: 1.875rem;
+    padding: 1.25rem;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 1rem;
+    border: 1px dashed var(--cor-borda);
+    display: none;
+}
+#area-resposta-oraculo h3 { margin-top: 0; color: #d6a2e8; }
+
+/* ==========================================================================
+   ESTILOS GERAIS (BOTÕES)
+   ========================================================================== */
+button {
+    background: var(--gradiente-botao);
+    color: white;
+    border: none;
+    padding: 1rem 1.5rem;
+    border-radius: 3rem;
+    font-family: 'Cinzel', serif;
+    font-size: 1em;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 1.25rem;
+}
+button:hover { transform: scale(1.05); }
+
+/* ==========================================================================
+   RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .container-principal {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+    #area-carta {
+        width: 80%;
+        max-width: 22rem;
+    }
+    #area-pergunta, #area-resultado {
+        text-align: center;
+    }
+}

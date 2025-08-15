@@ -25,24 +25,25 @@ O objetivo é registrar cada etapa de forma organizada, compartilhando decisões
 
 ## Ideia Inicial
 Decidi criar uma aplicação de tarot como uma oportunidade para demonstrar meus conhecimentos em **frontend**, **backend**, **lógica de programação**, **Git** e **integração com APIs** (incluindo o uso de uma IA para interpretar cartas e responder perguntas).
-
 Optei por um **tema anime** para diferenciar o projeto dos aplicativos de tarot tradicionais, além de refletir meu interesse pessoal por esse estilo. A proposta é transmitir aos usuários um pouco da atmosfera única presente nas produções de anime.
-
 O aplicativo será disponibilizado para uso aberto, permitindo que qualquer pessoa possa experimentar a tiragem de cartas e explorar interpretações personalizadas.
-
+conclusão: 11/08/2025
 ---
 
 ## Estruturacao do Projeto
 Nesta etapa, defini as principais tecnologias e a organização do código para garantir um desenvolvimento claro, organizado e escalável.  
 Utilizei Python com Flask no backend pela sua simplicidade e flexibilidade, e optei por HTML, CSS e JavaScript puro no frontend para facilitar meu aprendizado inicial.  
 A estrutura de pastas segue boas práticas, separando código, templates, arquivos estáticos e documentação, criando uma base sólida para o crescimento do projeto.  
-[📄Detalhes](docs/02_estruturacao.md) 11/08/2025
-
+[📄Detalhes](docs/02_estruturacao.md)
+conclusão: 12/08/2025
 ---
 
-## Design e Prototipo
-Texto explicando x...
-[📄Detalhes](docs/03_desing_prototipo.md) 11/08/2025
+## Design e Protótipo
+Após criar a identidade visual das cartas, iniciei o protótipo da interface com uma abordagem incremental e modular, aliada ao *vibe coding* assistido por IA (Gemini Pro, Google).  
+O foco foi construir e validar cada componente de forma isolada antes da integração, garantindo consistência visual e técnica.  
+A escolha por Flask, HTML, CSS e JavaScript puro manteve o projeto leve e didático, enquanto o CSS deu vida ao clima místico inspirado na estética anime.  
+[📄Detalhes](docs/03_design_prototipo.md)
+conclusão: 14/08/2025
 ---
 
 ## x
