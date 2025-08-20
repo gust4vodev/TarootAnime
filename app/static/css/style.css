@@ -200,8 +200,7 @@ button:hover { transform: scale(1.05); }
         gap: 2.5rem;
     }
     #area-carta {
-        width: 80%;
-        max-width: 22rem;
+        height: 50vh; 
     }
     #area-pergunta, #area-resultado {
         text-align: center;
