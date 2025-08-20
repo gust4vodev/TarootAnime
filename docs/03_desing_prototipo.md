@@ -13,11 +13,11 @@ Com os prompts prontos, usei o gerador de imagens gratuito do Bing para criar as
 
 ## 2. Protótipo da Interface
 
-Após definir a identidade visual das cartas, iniciei o desenvolvimento da interface com uma abordagem incremental e modular, combinada ao *vibe coding* assistido por IA, utilizando o Gemini Pro, da Google.  
+Após definir a identidade visual das cartas, iniciei o desenvolvimento da interface, combinada ao *vibe coding* assistido por IA, utilizando o Gemini Pro, da Google.  
 
-Optei por trabalhar com tecnologias fundamentais — Flask, HTML, CSS e JavaScript puro — para focar no aprendizado dos conceitos essenciais da web. O desenvolvimento seguiu um fluxo de “passos curtos”: cada pequena funcionalidade era construída, testada e validada antes de prosseguir, garantindo um progresso sólido.  
+Optei por trabalhar com tecnologias que ja tenho familiaridade: Flask, HTML, CSS e JavaScript puro — para focar no aprendizado dos conceitos essenciais da web. O desenvolvimento seguiu um fluxo de “passos curtos”: cada pequena funcionalidade era construída, testada e validada antes de prosseguir, garantindo um progresso sólido.  
 
-Começamos pela estrutura HTML e um servidor Flask para “servir” a página. Em seguida, aplicamos o CSS para moldar o visual, buscando transmitir o clima místico definido na identidade visual.
+Comecei pela estrutura HTML e um servidor Flask para “servir” a página. Em seguida, apliquei o CSS para moldar o visual, buscando transmitir o clima místico definido na identidade visual.
 
 ---
 
@@ -36,7 +36,7 @@ O primeiro passo foi estabelecer a base da aplicação.
 
 - **Desafio:** Criar uma transição suave e “mágica” para o momento do sorteio.  
 - **Soluções e Evolução:**  
-  - **Animação:** Partimos de uma exibição simples e evoluímos para um esquema em camadas: carta “de costas” → vídeo de cartas girando → carta sorteada ao final do vídeo.  
+  - **Animação:** Parti de uma exibição simples apenas exibindo a arte da carta para o usuário. Até evoluir para um esquema em camadas: carta “de costas” → vídeo de cartas girando → carta sorteada ao final do vídeo.  
   - **Transições Suaves:** Sistema de *cross-fade* controlado por JavaScript (manipulando `opacity`) e suavizado pelo CSS (`transition`).  
   - **Consistência Visual:** Aplicação das mesmas propriedades `transform` (`scale`, `rotateX`, `rotateY`) à imagem inicial, ao vídeo e à moldura, criando transições fluídas.
 
@@ -46,7 +46,7 @@ O primeiro passo foi estabelecer a base da aplicação.
 
 Esta foi a parte mais complexa do processo.
 
-- **Desafio:** Garantir que a carta sorteada aparecesse perfeitamente encaixada em um formato padrão, mantendo a unidade visual do baralho (as imagens geradas são “puras” e não possuem a moldura padrão que as faz parecer parte de um mesmo conjunto).  
+- **Desafio:** Garantir que a carta sorteada aparecesse perfeitamente encaixada em um formato padrão, mantendo a unidade visual do baralho (as imagens geradas são “puras” e não possuem a moldura padrão que as faz parecer cartas de um mesmo baralho).  
 - **Soluções:**  
   - Primeira tentativa com `clip-path` no CSS para recortar e encaixar a carta sorteada — resultado insatisfatório.  
   - Solução final: criação de uma moldura com centro transparente (usando Photopea). No resultado, a carta sorteada é exibida abaixo da moldura, criando efeito de profundidade e acabamento visual refinado.
@@ -64,10 +64,10 @@ Esta foi a parte mais complexa do processo.
 ### Etapa 5: Finalização do Frontend
 
 - **Botão Único:** Unificação dos botões “Revelar Carta” e “Pedir Resposta” em “Consultar o Oráculo”, simplificando o fluxo.  
-- **Fallback do Backend:** Função `async` em JavaScript simulando a chamada à API, retornando JSON no formato do backend real.  
+- **Fallback do Backend:** Função `async` em JavaScript simulando a chamada à API, retornando JSON no formato que tenho em mente para o backend real.  
 - **Lógica Condicional:** A “Resposta do Oráculo” só aparece se o usuário tiver digitado uma pergunta; caso contrário, apenas a carta e seu significado são exibidos.
 
 ---
 
 **Resultado Final:**  
-Frontend 100% funcional, visualmente polido, responsivo e com experiência de usuário bem definida — pronto para integração com o backend.
+Frontend 100% funcional, visualmente polido, responsivo e com experiência de usuário bem definida, pronto para integração com o backend.

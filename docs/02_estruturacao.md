@@ -9,14 +9,14 @@ Como ainda estou construindo minha base no desenvolvimento frontend, escolhi fer
 
 **Linguagem e Framework**  
 Optei por **Python** no backend, pela familiaridade e versatilidade da linguagem.  
-Para o servidor, escolhi o **Flask** — leve, direto e perfeito para quem quer aprender os fundamentos sem a complexidade de frameworks maiores. Ele permite criar rotas, renderizar templates e expor APIs de forma simples, com documentação clara e uma comunidade ativa que facilita a resolução de dúvidas.
-
+Para o servidor, escolhi o **Flask** — leve, menor curva de aprendizado, para praticar sem a complexidade de frameworks maiores. Ele permite criar rotas, renderizar templates e expor APIs de forma simples.
 **Banco de Dados**  
-Comecei com **SQLite**, banco relacional simples que dispensa configuração de servidor. É ideal para projetos pequenos e para aprender os conceitos básicos de persistência. Se o projeto crescer, a migração para algo mais robusto, como PostgreSQL, será tranquila.
+Desde o início do projeto, percebi que não seria necessário utilizar um banco de dados, pois não teríamos dados de usuários para armazenar, apenas o essencial para o funcionamento do TarootAnime.  
+Futuramente, caso decidir implementar funcionalidades como sessões personalizadas ou controle de usuários, poderemos avaliar a adição de um banco, como **SQLite** ou **PostgreSQL**, conforme a necessidade.
 
 **Ambiente Virtual e Dependências**  
-Uso o **venv** para isolar dependências, evitando conflitos com outros projetos.  
-Todas as bibliotecas ficam listadas em `requirements.txt`, facilitando a reprodução do ambiente em qualquer máquina.
+Usar o **venv** para isolar dependências, evitando conflitos com outros projetos.  
+Todas as bibliotecas serão listadas em `requirements.txt`, facilitando a reprodução do ambiente em qualquer máquina.
 
 ---
 
@@ -27,40 +27,21 @@ Para construir o frontend, optei por ir no essencial:
 - **CSS** para definir o visual,  
 - **JavaScript puro** para criar interatividade.
 
-Essa escolha me permite compreender como a web funciona na base, antes de partir para frameworks como React ou Vue.  
-Mais adiante, posso incluir bibliotecas leves, como Alpine.js, para aumentar a interatividade sem perder a simplicidade.
+Essa escolha me permite evoluir na compreenção de como a web funciona na base, antes de partir para frameworks como React ou Vue.  
+Mais adiante, posso incluir outras bibliotecas, para aumentar a interatividade sem perder a simplicidade.
 
 ---
 
 ## Integração com IA
 
-O backend será integrado à API da OpenAI para interpretar as cartas e responder perguntas de forma personalizada.  
+O backend será integrado à API do Gemini para interpretar as cartas e responder perguntas de forma personalizada.  
 Essa funcionalidade trará valor ao projeto e mostrará domínio em integrações com APIs externas e inteligência artificial.
 
 ---
 
-## Estrutura de Pastas
+## Organização do Código
 
-Organizei o projeto de forma modular e clara:
+Desde o início, minha ideia é manter o código o mais modular possível.  
+Isso me ajudará a **enxergar o projeto de forma clara**, do começo ao fim, e facilita bastante na hora de debugar ou fazer alterações.
 
-```plaintext
-tarootanime/
-│
-├── app/                           # Código principal
-│   ├── __init__.py                # Configuração do Flask
-│   ├── routes.py                  # Rotas e controladores
-│   ├── models.py                  # Modelos e banco
-│   ├── static/                    # CSS, JS e imagens
-│   │   ├── css/
-│   │   ├── js/
-│   │   └── img/
-│   └── templates/                 # Templates HTML (Jinja2)
-│       ├── base.html               # Layout base
-│       └── index.html              # Página inicial
-│
-├── docs/                          # Documentação em Markdown
-├── tests/                         # Testes automatizados (futuros)
-├── venv/                          # Ambiente virtual (ignorado no Git)
-├── requirements.txt               # Dependências
-├── run.py                         # Inicialização do servidor
-└── README.md                      # Documentação principal
+A ideia é que, conforme o projeto evoluir, cada componente, rotas, templates, arquivos estáticos, lógica do backend, esteja organizado de forma separada e bem definida, tornando o desenvolvimento mais simples, limpo e escalável.

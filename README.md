@@ -7,8 +7,8 @@
 1. [Ideia Inicial](#ideia-inicial)
 2. [Estruturação do Projeto](#estruturacao-do-projeto)
 3. [Design e Protótipo](#design-e-prototipo)
-4. [x](#x)
-5. [x](#x)
+4. [Desenvolvimento do Backend](#desenvolvimento-do-backend)
+5. [Preparação para o Deploy e Hospedagem](#x)
 6. [x](#x)
 7. [x](#x)
 8. [x](#x)
@@ -46,25 +46,27 @@ A escolha por Flask, HTML, CSS e JavaScript puro manteve o projeto leve e didát
 conclusão: 14/08/2025
 ---
 
-## x
+## Desenvolvimento do Backend
+No backend, construí uma **estrutura modular**, separando responsabilidades entre rotas, serviços e lógica de negócio.  
+Os dados das cartas foram organizados em um arquivo JSON externo, e a integração com a **IA (Gemini)** permite gerar respostas personalizadas e místicas para cada tiragem de cartas.  
+Durante o processo, consolidei conhecimentos em **organização de código, consumo de APIs, tratamento de erros** e boas práticas do Flask.  
+O resultado é um backend funcional, seguro e escalável, pronto para se conectar ao frontend e evoluir conforme novas funcionalidades forem adicionadas.
+[📄Detalhes](docs/04_backend_integracoes.md)
+conclusão: 19/08/2025
+---
+
+## Preparação para o Deploy e Hospedagem
+Texto explicando x...
+[📄Detalhes](docs/05_deploy_hospedagem.md)
+conclusão: 19/08/2025
+---
+
+## Desenvolvimento do Frontend
 Texto explicando x...
 [📄 x](x.md)
 ---
 
-## x
+## Desenvolvimento do Frontend
 Texto explicando x...
 [📄 x](x.md)
 ---
-
-## x
-Texto explicando x...
-[📄 x](x.md)
----
-
-## x
-Texto explicando x...
-[📄 x](x.md)
----       
-
-## Frontend e Interatividade
-Texto explicando frontend...
