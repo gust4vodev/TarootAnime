@@ -8,7 +8,7 @@ def _carregar_baralho():
     Retorna uma lista de cartas ou um dicionário de erro.
     """
     try:
-        # O caminho agora é relativo a ESTE arquivo (que está dentro de app/services)
+        # Caminho relativo a ESTE arquivo (que está dentro de app/services)
         base_dir = os.path.abspath(os.path.dirname(__file__))
         # Subimos 1 nível para a pasta 'app', depois descemos para a pasta 'data'
         json_path = os.path.join(base_dir, '..', 'data', 'tarrotanime.json')
