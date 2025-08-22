@@ -25,7 +25,7 @@ def obter_resposta_da_ia(pergunta, carta):
             f"Aja como um oráculo de tarot místico, sábio e poético. "
             f"Um consulente fez a seguinte pergunta: '{pergunta}'.\n"
             f"A carta sorteada para ele foi '{carta['nome']}', que tem o significado principal de '{carta['significado']}'.\n\n"
-            f"Com base na carta sorteada e em seu significado, formule uma resposta provocativa e reflexiva para a pergunta do consulente. "
+            f"Com base na carta sorteada e em seu significado, formule uma resposta com base em conhecimentos oficiais de tarologia e seja preciso e cirurgico e deixe um convite sutil ao usuario fazer uma nova pergunta"
             f"A resposta deve curta em um único parágrafo e ter um tom enigmático, mas útil."
         )
 
